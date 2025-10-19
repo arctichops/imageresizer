@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BG enhancer - Image Resizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>BG enhancer</h1>
+            <p>Modern & Minimalist Image Resizing Tool</p>
+        </header>
+
+        <main class="main-content">
+            <div class="upload-area" id="uploadArea">
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <label for="imageInput" class="upload-label">
+                    <span>🖼️</span>
+                    <p>Click to Upload or Drag & Drop an Image</p>
+                </label>
+            </div>
+
+            <div class="controls-area" id="controlsArea" style="display: none;">
+                <div class="image-preview">
+                    <img id="previewImage" src="#" alt="Image Preview">
+                    <p id="originalInfo"></p>
+                </div>
+
+                <div class="options">
+                    <div class="option-card">
+                        <h2>Resize by Dimensions (Pixels)</h2>
+                        <div class="input-group">
+                            <label for="widthInput">Width:</label>
+                            <input type="number" id="widthInput" placeholder="e.g., 1920">
+                            <label for="heightInput">Height:</label>
+                            <input type="number" id="heightInput" placeholder="e.g., 1080">
+                        </div>
+                        <button id="resizeByDimBtn" class="action-btn">Resize by Dimensions</button>
+                    </div>
+
+                    <div class="option-card">
+                        <h2>Resize by Target File Size</h2>
+                        <p>Select a target size. The tool will adjust quality to get close to the desired size.</p>
+                        <div class="size-buttons">
+                            <button class="size-btn" data-size="10">10 KB</button>
+                            <button class="size-btn" data-size="20">20 KB</button>
+                            <button class="size-btn" data-size="50">50 KB</button>
+                            <button class="size-btn" data-size="100">100 KB</button>
+                            <button class="size-btn" data-size="150">150 KB</button>
+                            <button class="size-btn" data-size="200">200 KB</button>
+                            <button class="size-btn" data-size="250">250 KB</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resultArea" class="result-area" style="display: none;">
+                    <h2>Result</h2>
+                    <img id="resultImage" src="#" alt="Resized Image">
+                    <p id="resultInfo"></p>
+                    <a id="downloadLink" class="download-btn" download="resized-image.jpg">Download Image</a>
+                </div>
+                 <button id="resetBtn" class="reset-btn">Resize Another Image</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>By- The Pacifier</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
