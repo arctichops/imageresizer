@@ -1,0 +1,2 @@
+# imageresizer
+to resize image 
